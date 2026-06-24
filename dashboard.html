@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocuGov Central - Meeting Document Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Hanken+Grotesk:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {tertiary: "#913d00", error: "#ba1a1a", "primary-fixed": "#d8e2ff", "on-tertiary-fixed": "#341100", "on-error-container": "#93000a", "tertiary-container": "#b84f00", "on-surface-variant": "#424753", "primary-container": "#1d6bd9", "surface-dim": "#d8d9e3", "on-secondary-container": "#415680", "on-background": "#191b22", "on-tertiary": "#ffffff", "inverse-surface": "#2e3038", "surface-container": "#ecedf7", "on-primary-fixed-variant": "#004494", "surface-container-highest": "#e1e2ec", "on-secondary": "#ffffff", primary: "#0053b2", "secondary-fixed-dim": "#b2c6f7", "on-secondary-fixed-variant": "#31466f", "on-tertiary-container": "#fff0ea", background: "#f9f9ff", "surface-tint": "#005ac2", "primary-fixed-dim": "#adc6ff", outline: "#727785", "on-surface": "#191b22", "secondary-container": "#b7ccfd", "error-container": "#ffdad6", "surface-container-high": "#e7e7f1", secondary: "#4a5e89", "inverse-on-surface": "#eff0fa", "surface-variant": "#e1e2ec", "on-primary-fixed": "#001a41", "outline-variant": "#c2c6d5", "surface-container-low": "#f2f3fd", "tertiary-fixed": "#ffdbcb", "on-primary": "#ffffff", "on-secondary-fixed": "#001a41", "tertiary-fixed-dim": "#ffb691", "on-primary-container": "#f0f2ff", surface: "#f9f9ff", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "secondary-fixed": "#d8e2ff", "on-tertiary-fixed-variant": "#783100", "inverse-primary": "#adc6ff", "surface-bright": "#f9f9ff"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"margin-mobile": "1rem", gutter: "1.5rem", "stack-lg": "2rem", "container-max": "1440px", "stack-md": "1rem", "stack-sm": "0.5rem", "margin-desktop": "2rem"}, fontFamily: {"body-lg": ["Inter"], "headline-sm": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "body-md": ["Inter"], "headline-lg-mobile": ["Hanken Grotesk"], "label-md": ["Inter"], "headline-lg": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Inter"], label: ["Inter"]}, fontSize: {"body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "700"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[280px] z-50 bg-surface-container-low dark:bg-tertiary border-r border-outline-variant dark:border-tertiary-container flex flex-col p-stack-md gap-stack-sm">
+<div class="flex items-center gap-3 px-2 py-4 mb-4">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h1 class="text-headline-sm font-headline-sm text-primary dark:text-primary-fixed">GovDocs</h1>
+<p class="text-label-md font-label-md text-secondary opacity-70">Management Portal</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container font-bold rounded-lg flex items-center gap-3 px-4 py-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-secondary dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary-container flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Documents</span>
+</a>
+<a class="text-secondary dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary-container flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span>Departments</span>
+</a>
+<a class="text-secondary dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary-container flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Archives</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-outline-variant pt-4">
+<a class="text-secondary dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary-container flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-error flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-error-container/20 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-[280px] min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full h-16 sticky top-0 z-40 bg-surface-container-lowest dark:bg-tertiary border-b border-outline-variant dark:border-tertiary-container flex justify-between items-center px-margin-desktop">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary-container text-body-md" placeholder="ค้นหาเอกสารหรือชื่อการประชุม..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-secondary">
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-6 w-px bg-outline-variant"></div>
+<button class="text-label-md font-label-md hover:text-primary transition-colors">Settings</button>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+<div class="text-right hidden lg:block">
+<p class="text-body-md font-bold text-primary">Admin User</p>
+<p class="text-[10px] uppercase tracking-wider text-secondary">System Administrator</p>
+</div>
+<img class="w-10 h-10 rounded-full border border-outline-variant" data-alt="User profile photo of a professional male administrator in a corporate setting, soft studio lighting, neutral background, reflecting expertise and authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1q3hx4r8ej43waZYFSHJsEt5SUcWpdefuWJULiY_IYtWwemnYq4vePlmvW_f41rViVmXQSvNUWTC7t3zl6ZIlSCb8yiE1pgEqUZNzm3KGa8I2WXa3ZpKstjm5IEUtuXvVLywu--3wsyxCJBG8QQQVYkDlXQAhwG1TAa_zB3G2Qv1Cwx99hMR0x1dOjUmSKPl0dACQs_AL4Z26tsL8ARj95NGMXFVITkPpwCl9tUZcwHNvxGTVQdTSFcBnbSaUpPzoFEeL07kTgog"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Dashboard Overview</h2>
+<p class="text-secondary font-body-lg">Welcome back. Here is what's happening with meeting documents today.</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-3 rounded flex items-center gap-2 font-bold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>เพิ่มเอกสาร</span>
+</button>
+</div>
+<!-- Bento Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg">
+<!-- Total Documents Card -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant p-6 rounded-lg flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary-container text-[32px]" data-icon="folder_open">folder_open</span>
+</div>
+<span class="text-label-md font-label-md text-secondary bg-surface-container px-2 py-1 rounded">THIS MONTH</span>
+</div>
+<h3 class="text-label-md text-secondary uppercase tracking-widest font-bold">Total Documents</h3>
+<p class="text-headline-lg font-headline-lg text-primary mt-1">1,284</p>
+</div>
+<div class="mt-6 flex items-center gap-2 text-success text-[13px] text-green-600 font-bold">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span>+12% from last month</span>
+</div>
+</div>
+<!-- Department Chart Card -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant p-6 rounded-lg">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-headline-sm font-headline-sm text-primary">Documents by Department</h3>
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 h-40">
+<!-- Simulated Bar Chart -->
+<div class="flex flex-col justify-end items-center gap-2">
+<div class="w-full bg-primary-container/20 rounded-t h-[80%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t transition-all duration-700 h-[65%]"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-tertiary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">450</div>
+</div>
+<span class="text-label-md font-bold">สยศ.</span>
+</div>
+<div class="flex flex-col justify-end items-center gap-2">
+<div class="w-full bg-primary-container/20 rounded-t h-[80%] relative group">
+<div class="absolute bottom-0 w-full bg-primary/80 rounded-t transition-all duration-700 h-[85%]"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-tertiary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">580</div>
+</div>
+<span class="text-label-md font-bold">ศทส.</span>
+</div>
+<div class="flex flex-col justify-end items-center gap-2">
+<div class="w-full bg-primary-container/20 rounded-t h-[80%] relative group">
+<div class="absolute bottom-0 w-full bg-primary/60 rounded-t transition-all duration-700 h-[40%]"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-tertiary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">210</div>
+</div>
+<span class="text-label-md font-bold">กง.</span>
+</div>
+<div class="flex flex-col justify-end items-center gap-2">
+<div class="w-full bg-primary-container/20 rounded-t h-[80%] relative group">
+<div class="absolute bottom-0 w-full bg-primary/40 rounded-t transition-all duration-700 h-[30%]"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-tertiary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">144</div>
+</div>
+<span class="text-label-md font-bold">อื่นๆ</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Data Table Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-white">
+<h3 class="text-headline-sm font-headline-sm text-primary">Recent Meeting Documents</h3>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded hover:bg-surface-container-low transition-colors text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                            Filter
+                        </button>
+<button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded hover:bg-surface-container-low transition-colors text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 text-secondary border-b border-outline-variant">
+<th class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider">Meeting Name</th>
+<th class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider">Date</th>
+<th class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider">Department</th>
+<th class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider">Person in Charge</th>
+<th class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Table Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="px-6 py-4 font-bold text-primary">ประชุมคณะกรรมการบริหารจัดการน้ำ ครั้งที่ 4/2566</td>
+<td class="px-6 py-4 text-secondary whitespace-nowrap">24 Oct 2023</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-[11px] font-bold">สยศ.</span>
+</td>
+<td class="px-6 py-4 flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="Portrait of a female government officer in a professional uniform, sharp focus, bright professional office lighting, minimal clean background, high quality enterprise aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD65pyhEh8ctIrLkc0hSfynKDcJSi7KXorAV4vNq5OuuJ4IOAxCxPTfRHHyzesKlbN6Burow3lGB7aPwbNJ2CZ5ttW2ivjONJGCYVAQo2eh3KQmnTJaKpWI6TdsKt-TstlZm11rY4yQ87aaOzEzF15O7NlySLQ2UksU2_okvY7R9ACOirp-8ezhRHyp3r1KMHoWU6EDbtDKrO4cSgn3qCpkozmysPvCST7-hFvnRtMxXeivSEt5A54pj1ysggWXnGqmtjlXCIHzHOU"/>
+<span class="text-body-md">สมศรี รักเรียน</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold bg-green-100 text-green-700">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+                                        Complete
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-secondary hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="px-6 py-4 font-bold text-primary">หารือแนวทางพัฒนาระบบ Big Data ภาครัฐ</td>
+<td class="px-6 py-4 text-secondary whitespace-nowrap">23 Oct 2023</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-primary-container/10 text-primary rounded text-[11px] font-bold">ศทส.</span>
+</td>
+<td class="px-6 py-4 flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="Close-up portrait of a male technical consultant, professional attire, modern office environment with blurred computer screens in the background, cool lighting tones, crisp and authoritative look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzQZXgSJrL96drSTm0LEtcw6GoudgO6b-QHy24mZpjECU5M_gXLipy-xSh8YTOaZss_ge-v_pm9Auabk7JVK2-LSWysKKqWTEmpbdq709h9oFbN8B2VkkFqYqIt7wgD-f5t-oipsmMJW96FOwqOXPlJSKXm-lmaX96P9DxWfUJqDmktNfJKKYIkJlb0YrVfnJ5vOrVIiLJlw-JjuYxthBBxNQVZHaMVY885WbeYUsAJFyKZBWAg5ygPbbGuMx1M3PczjrZlnuZ3Q"/>
+<span class="text-body-md">สมชาย มีเทคโนโลยี</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-100 text-blue-700">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                                        Draft
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-secondary hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+</td>
+</tr>
+<!-- Repeat Row Pattern for 10 items (Mocking for layout) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="px-6 py-4 font-bold text-primary">ประชุมวางแผนงบประมาณประจำปี 2567</td>
+<td class="px-6 py-4 text-secondary whitespace-nowrap">22 Oct 2023</td>
+<td class="px-6 py-4"><span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-[11px] font-bold">กง.</span></td>
+<td class="px-6 py-4 flex items-center gap-2"><img class="w-6 h-6 rounded-full" data-alt="Portrait of an older professional male finance officer, experienced expression, wearing a neutral colored suit, soft corporate lighting, professional studio setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9tKxnhmsqIyc0lCh1FSe0h_K-bXYGxYSA269aX2ERcHmC5do5M2QO9MVghrPrmM8DZgsuZwNLQUQ6ODGFTlG27q0R9coOfjdAt0R0vac_q2Az6yQq31efCUhGZxOWVqw8W25olTugSHPU2BtYRH5Tf-2J00DbFv-WOlAgZEoP5D2NMaexgGrJs5OBw91SMWik9iAxdW9OwaLO8H1wQUSOjgidS1XgKAwIkpnGck9evnOQu8SPAAbCGMfqoMoUApjyfPtA9u3gCW4"/><span class="text-body-md">วิชัย เงินทอง</span></td>
+<td class="px-6 py-4"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-700"><span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>Reviewing</span></td>
+<td class="px-6 py-4 text-right"><button class="text-secondary hover:text-primary"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button></td>
+</tr>
+<!-- Row 4-10 Placeholder for pagination visual -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="px-6 py-4 font-bold text-primary">จัดทำมาตรฐานความปลอดภัยทางไซเบอร์</td>
+<td class="px-6 py-4 text-secondary whitespace-nowrap">20 Oct 2023</td>
+<td class="px-6 py-4"><span class="px-2 py-1 bg-primary-container/10 text-primary rounded text-[11px] font-bold">ศทส.</span></td>
+<td class="px-6 py-4 flex items-center gap-2"><img class="w-6 h-6 rounded-full" data-alt="Portrait of a young female IT security specialist, confident and professional, modern workstation background, soft bokeh, vibrant yet professional color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMsATkdDgNGdrIeeqfGwnadJae1XBsaB1c-PgAaFY6Jtr4vRDKQJee4ha-QqCK-8_HT-h22y7l_1Ja26jzBtzLRLNX5Gp3xqJk3NBTg-uaajS0Lfu3ZdI7K-_fmYxQbCScu8YQG_m_k2IQ12x6M1uNpnk0MTdxtzXNwWFghsTi48Gnq3F3FgpOOLbDP9rUd4x4cFUB7UIscFfYiadyDZNvkXbvGfLQxx5FQqLH0XbxL54U6Su77VLzJXM52XkJxm2gTdJMcT5yM8U"/><span class="text-body-md">นภาพร ป้องกัน</span></td>
+<td class="px-6 py-4"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold bg-green-100 text-green-700"><span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>Complete</span></td>
+<td class="px-6 py-4 text-right"><button class="text-secondary hover:text-primary"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button></td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="px-6 py-4 font-bold text-primary">สรุปรายงานประจำเดือน กันยายน 2566</td>
+<td class="px-6 py-4 text-secondary whitespace-nowrap">19 Oct 2023</td>
+<td class="px-6 py-4"><span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-[11px] font-bold">สยศ.</span></td>
+<td class="px-6 py-4 flex items-center gap-2"><img class="w-6 h-6 rounded-full" data-alt="Professional profile image of a male department head, gray hair, sharp suit, clean white office background, soft daylight, reflecting stability and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg-LNjsBmZd5TLN6h0GB_61N5-Nu2pCxq4oaZo0WhyD8_dhpsfSbHkK3uiF7kH1GF0i0rlSdlVdddyqXAqBYb1EnCnG8g__6UwD2qWtFL6SsbUT9yNy86Ir7rarVjDHdACXGkG1EuOuKvtNEZlC24VY6SF_pKRzV2cq6k6UB3dj2C7jy7LhSg5Oq7nqY07WeiL4iWvQAthRjTh1r0DPDY7gVnGWnD8xC96qbybdcYHCtIrnrqhvWw-ajxnwsOnWbfeZPN7XzUqyQU"/><span class="text-body-md">ประเสริฐ สรุปการ</span></td>
+<td class="px-6 py-4"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold bg-green-100 text-green-700"><span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>Complete</span></td>
+<td class="px-6 py-4 text-right"><button class="text-secondary hover:text-primary"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-white border-t border-outline-variant flex justify-between items-center">
+<p class="text-label-md text-secondary">Showing <span class="font-bold text-primary">1-10</span> of <span class="font-bold text-primary">124</span> documents</p>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-secondary opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary font-bold text-label-md">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors text-label-md">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors text-label-md">3</button>
+<span class="px-2 text-secondary">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors text-label-md">13</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Stats / Small Charts -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-stack-lg">
+<div class="p-4 border border-outline-variant rounded-lg bg-surface-container-lowest flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-600" data-icon="pending_actions">pending_actions</span>
+</div>
+<div>
+<p class="text-label-md text-secondary font-bold uppercase">Pending Review</p>
+<p class="text-headline-sm text-primary">24 Docs</p>
+</div>
+</div>
+<div class="p-4 border border-outline-variant rounded-lg bg-surface-container-lowest flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600" data-icon="verified">verified</span>
+</div>
+<div>
+<p class="text-label-md text-secondary font-bold uppercase">Approved Today</p>
+<p class="text-headline-sm text-primary">12 Docs</p>
+</div>
+</div>
+<div class="p-4 border border-outline-variant rounded-lg bg-surface-container-lowest flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<div>
+<p class="text-label-md text-secondary font-bold uppercase">Storage Used</p>
+<p class="text-headline-sm text-primary">64%</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-auto py-6 px-margin-desktop border-t border-outline-variant text-center text-label-md text-secondary">
+            © 2023 DocuGov Central. All rights reserved. Lexicon Enterprise Design System.
+        </footer>
+</main>
+<!-- FAB for quick upload -->
+<div class="fixed bottom-8 right-8 group">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-50">
+<span class="material-symbols-outlined text-[32px]" data-icon="file_upload">file_upload</span>
+</button>
+<span class="absolute right-16 top-1/2 -translate-y-1/2 bg-tertiary text-white text-body-md px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+            Quick Upload
+        </span>
+</div>
+<script>
+        // Micro-interactions for table rows
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                console.log('Row clicked: ' + row.querySelector('td').innerText);
+            });
+        });
+
+        // Simple button active states
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('opacity-80'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('opacity-80'));
+        });
+    </script>
+</body></html>

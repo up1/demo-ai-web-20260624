@@ -1,0 +1,18 @@
+=== REQ ===
+
+Web app
+ระบบจัดเก็บเอกสารการประชุม
+
+Page 1 :: Dashboard เอกสารการประชุม
+- จำนวนเอกสารทั้งหมด
+- จำนวนเอกสารทั้งหมดแยกตามหน่วยงาน
+- List ข้อมูล แสดงหน้าละ 10
+
+Page 2 :: เพิ่มเอกสารการประชุม
+- ชื่อการประชุม
+- รายละเอียดการประชุม
+- เลือกหน่วยงาน เช่น สยศ, ศทส เป็นต้น
+- ชื่อผู้รับผิดชอบ
+
+=== Extract data from HTML to JSON format ===
+summarize input from dashboard in json format and save to data.json

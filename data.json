@@ -1,0 +1,130 @@
+{
+  "page": {
+    "title": "DocuGov Central - Meeting Document Management",
+    "heading": "Dashboard Overview",
+    "subtitle": "Welcome back. Here is what's happening with meeting documents today."
+  },
+  "user": {
+    "name": "Admin User",
+    "role": "System Administrator"
+  },
+  "navigation": {
+    "sidebar": {
+      "brand": {
+        "name": "GovDocs",
+        "tagline": "Management Portal"
+      },
+      "main": [
+        { "label": "Dashboard", "icon": "dashboard", "active": true },
+        { "label": "Documents", "icon": "description", "active": false },
+        { "label": "Departments", "icon": "account_tree", "active": false },
+        { "label": "Archives", "icon": "inventory_2", "active": false }
+      ],
+      "footer": [
+        { "label": "Settings", "icon": "settings" },
+        { "label": "Logout", "icon": "logout" }
+      ]
+    },
+    "topbar": {
+      "searchPlaceholder": "ค้นหาเอกสารหรือชื่อการประชุม...",
+      "actions": ["notifications", "help", "Settings"]
+    }
+  },
+  "metrics": {
+    "totalDocuments": {
+      "label": "Total Documents",
+      "value": 1284,
+      "period": "THIS MONTH",
+      "trend": {
+        "direction": "up",
+        "change": "+12%",
+        "comparedTo": "last month"
+      }
+    },
+    "documentsByDepartment": [
+      { "department": "สยศ.", "count": 450 },
+      { "department": "ศทส.", "count": 580 },
+      { "department": "กง.", "count": 210 },
+      { "department": "อื่นๆ", "count": 144 }
+    ]
+  },
+  "recentMeetingDocuments": {
+    "title": "Recent Meeting Documents",
+    "columns": [
+      "Meeting Name",
+      "Date",
+      "Department",
+      "Person in Charge",
+      "Status",
+      "Actions"
+    ],
+    "actions": ["Filter", "Export"],
+    "rows": [
+      {
+        "meetingName": "ประชุมคณะกรรมการบริหารจัดการน้ำ ครั้งที่ 4/2566",
+        "date": "2023-10-24",
+        "department": "สยศ.",
+        "personInCharge": "สมศรี รักเรียน",
+        "status": "Complete"
+      },
+      {
+        "meetingName": "หารือแนวทางพัฒนาระบบ Big Data ภาครัฐ",
+        "date": "2023-10-23",
+        "department": "ศทส.",
+        "personInCharge": "สมชาย มีเทคโนโลยี",
+        "status": "Draft"
+      },
+      {
+        "meetingName": "ประชุมวางแผนงบประมาณประจำปี 2567",
+        "date": "2023-10-22",
+        "department": "กง.",
+        "personInCharge": "วิชัย เงินทอง",
+        "status": "Reviewing"
+      },
+      {
+        "meetingName": "จัดทำมาตรฐานความปลอดภัยทางไซเบอร์",
+        "date": "2023-10-20",
+        "department": "ศทส.",
+        "personInCharge": "นภาพร ป้องกัน",
+        "status": "Complete"
+      },
+      {
+        "meetingName": "สรุปรายงานประจำเดือน กันยายน 2566",
+        "date": "2023-10-19",
+        "department": "สยศ.",
+        "personInCharge": "ประเสริฐ สรุปการ",
+        "status": "Complete"
+      }
+    ],
+    "pagination": {
+      "showing": "1-10",
+      "total": 124,
+      "currentPage": 1,
+      "totalPages": 13
+    }
+  },
+  "footerStats": [
+    {
+      "label": "Pending Review",
+      "value": "24 Docs",
+      "icon": "pending_actions"
+    },
+    {
+      "label": "Approved Today",
+      "value": "12 Docs",
+      "icon": "verified"
+    },
+    {
+      "label": "Storage Used",
+      "value": "64%",
+      "icon": "cloud_upload"
+    }
+  ],
+  "quickActions": [
+    { "label": "เพิ่มเอกสาร", "icon": "add", "type": "primary" },
+    { "label": "Quick Upload", "icon": "file_upload", "type": "fab" }
+  ],
+  "footer": {
+    "copyright": "© 2023 DocuGov Central. All rights reserved. Lexicon Enterprise Design System."
+  }
+}
