@@ -9,7 +9,7 @@
 1. User logs in and is redirected to dashboard page, click link "เพิ่มเอกสาร" to go to add new document page.
 2. User fill in the form and click submit button
    - Validate input data, if any required field is empty, show error message and do not submit the form.
-   - Show error message next to the field that has an error, and highlight the field with red border.
+   - Show error message with iniline text below the input field, and highlight the input field with red border.
 3. If all required fields are filled, submit the form and save the data to the database
    - default status = "Draft"
    - Save to file `data/data.json` in section "Recent Meeting Documents"
