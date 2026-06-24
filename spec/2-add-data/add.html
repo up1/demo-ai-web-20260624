@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocuGov Central - เพิ่มเอกสารการประชุม</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {tertiary: "#913d00", error: "#ba1a1a", "primary-fixed": "#d8e2ff", "on-tertiary-fixed": "#341100", "on-error-container": "#93000a", "tertiary-container": "#b84f00", "on-surface-variant": "#424753", "primary-container": "#1d6bd9", "surface-dim": "#d8d9e3", "on-secondary-container": "#415680", "on-background": "#191b22", "on-tertiary": "#ffffff", "inverse-surface": "#2e3038", "surface-container": "#ecedf7", "on-primary-fixed-variant": "#004494", "surface-container-highest": "#e1e2ec", "on-secondary": "#ffffff", primary: "#0053b2", "secondary-fixed-dim": "#b2c6f7", "on-secondary-fixed-variant": "#31466f", "on-tertiary-container": "#fff0ea", background: "#f9f9ff", "surface-tint": "#005ac2", "primary-fixed-dim": "#adc6ff", outline: "#727785", "on-surface": "#191b22", "secondary-container": "#b7ccfd", "error-container": "#ffdad6", "surface-container-high": "#e7e7f1", secondary: "#4a5e89", "inverse-on-surface": "#eff0fa", "surface-variant": "#e1e2ec", "on-primary-fixed": "#001a41", "outline-variant": "#c2c6d5", "surface-container-low": "#f2f3fd", "tertiary-fixed": "#ffdbcb", "on-primary": "#ffffff", "on-secondary-fixed": "#001a41", "tertiary-fixed-dim": "#ffb691", "on-primary-container": "#f0f2ff", surface: "#f9f9ff", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "secondary-fixed": "#d8e2ff", "on-tertiary-fixed-variant": "#783100", "inverse-primary": "#adc6ff", "surface-bright": "#f9f9ff"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"margin-mobile": "1rem", gutter: "1.5rem", "stack-lg": "2rem", "container-max": "1440px", "stack-md": "1rem", "stack-sm": "0.5rem", "margin-desktop": "2rem"}, fontFamily: {"body-lg": ["Inter"], "headline-sm": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "body-md": ["Inter"], "headline-lg-mobile": ["Hanken Grotesk"], "label-md": ["Inter"], "headline-lg": ["Hanken Grotesk"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Inter"], label: ["Inter"]}, fontSize: {"body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}], "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "700"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+        }
+        .form-input-focus:focus {
+            outline: none;
+            border-color: #1b365d;
+            border-width: 2px;
+        }
+        /* Custom scrollbar for professional look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d0e1fb; border-radius: 10px; }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="w-full h-16 sticky top-0 z-40 bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center px-margin-desktop">
+<div class="flex items-center gap-gutter">
+<h1 class="text-headline-sm font-headline-sm text-primary">DocuGov Central</h1>
+<div class="hidden md:flex gap-stack-md ml-stack-lg">
+<nav class="flex items-center gap-6">
+<a class="text-secondary hover:bg-surface-container-low px-3 py-1 rounded transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary px-3 py-1 font-label-md text-label-md" href="#">Documents</a>
+<a class="text-secondary hover:bg-surface-container-low px-3 py-1 rounded transition-colors font-label-md text-label-md" href="#">Analytics</a>
+</nav>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-2 px-3 py-1.5 hover:bg-surface-container-low rounded-lg transition-colors">
+<img class="w-8 h-8 rounded-full border border-outline-variant" data-alt="Official headshot of a government administrator wearing a professional navy blue suit, set against a clean, neutral slate gray background. High-quality corporate photography style with soft key lighting and professional depth of field, maintaining a reliable and authoritative appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM1n6JiBxrHasEJe_VvK8F-nyMS-eaCL6yYMbeDrDHfku0hW4LYkuMtEQQAsEozqWkyyhNMrRMNHWCmdKEco8OU1ePP9MMleWEyskSGE6ibMfjHrYwj8xNsF-2fUcHffsH8tvhncACROx_POcSJAH74a5JlvG2Rjmkha9K0kxANbImVGSk4hBIrda0T0q8sT9MwgZkaM3SofeS86QV22b3YTes4cO-zE7FPFAZjvUJaaKscyH06aisWbffwB0q4XOTzw23vDVofcs"/>
+<span class="hidden lg:inline text-secondary font-label-md">Admin User</span>
+<span class="material-symbols-outlined text-secondary" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<div class="flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-[280px] z-30 bg-surface-container-low border-r border-outline-variant flex flex-col p-stack-md gap-stack-sm hidden md:flex">
+<div class="mb-stack-lg px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<p class="text-headline-md font-headline-md text-primary leading-tight">GovDocs</p>
+<p class="text-label-md font-label-md text-secondary">Management Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container font-bold rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md">Documents</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-label-md">Departments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md">Archives</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-stack-md flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/30 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] p-8 max-w-[1440px] mx-auto w-full">
+<div class="mb-stack-lg">
+<nav class="flex items-center text-label-md text-secondary mb-2 gap-2">
+<a class="hover:text-primary" href="#">หน้าแรก</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary" href="#">เอกสาร</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">เพิ่มเอกสารการประชุม</span>
+</nav>
+<h2 class="text-headline-lg font-headline-lg text-primary">เพิ่มเอกสารการประชุม</h2>
+<p class="text-body-md text-secondary mt-1">กรอกข้อมูลรายละเอียดการประชุมเพื่อบันทึกลงในระบบจัดการเอกสารกลาง</p>
+</div>
+<!-- Form Section with Bento-inspired Card Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Form Card -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="bg-primary-container/5 px-8 py-6 border-b border-outline-variant">
+<h3 class="text-headline-sm font-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
+                            ข้อมูลรายละเอียด
+                        </h3>
+</div>
+<form class="p-8 space-y-6" id="meetingForm">
+<!-- Meeting Title -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant uppercase tracking-wider" for="meetingTitle">ชื่อการประชุม</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline bg-white text-body-lg font-body-lg form-input-focus transition-all placeholder:text-on-secondary-container/40" id="meetingTitle" placeholder="เช่น การประชุมคณะกรรมการเทคโนโลยีสารสนเทศ ครั้งที่ 1/2567" type="text"/>
+</div>
+<!-- Department and Person in Charge (Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant uppercase tracking-wider" for="department">หน่วยงาน</label>
+<div class="relative">
+<select class="w-full px-4 py-3 rounded-lg border border-outline bg-white text-body-lg font-body-lg form-input-focus appearance-none transition-all" id="department">
+<option disabled="" selected="" value="">เลือกหน่วยงาน</option>
+<option value="สยศ.">สำนักนโยบายและแผน (สยศ.)</option>
+<option value="ศทส.">ศูนย์เทคโนโลยีสารสนเทศ (ศทส.)</option>
+<option value="สพพ.">สำนักบริหารทรัพยากรบุคคล (สพพ.)</option>
+<option value="สลค.">สำนักเลขาธิการคณะรัฐมนตรี (สลค.)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant uppercase tracking-wider" for="pic">ชื่อผู้รับผิดชอบ</label>
+<div class="relative">
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline bg-white text-body-lg font-body-lg form-input-focus transition-all" id="pic" placeholder="ระบุชื่อ-นามสกุล" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary" data-icon="person">person</span>
+</div>
+</div>
+</div>
+<!-- Meeting Description -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface-variant uppercase tracking-wider" for="description">รายละเอียดการประชุม</label>
+<textarea class="w-full px-4 py-3 rounded-lg border border-outline bg-white text-body-lg font-body-lg form-input-focus transition-all resize-none" id="description" placeholder="สรุปหัวข้อสำคัญหรือประเด็นการหารือ..." rows="5"></textarea>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-4 pt-4 border-t border-outline-variant">
+<button class="px-6 py-2.5 rounded-lg border border-secondary text-secondary font-label-md hover:bg-surface-container-high transition-all active:opacity-80" type="button">
+                                ยกเลิก
+                            </button>
+<button class="px-8 py-2.5 rounded-lg bg-primary text-white font-label-md shadow-sm hover:bg-primary-container transition-all flex items-center gap-2 active:opacity-80" type="submit">
+<span class="material-symbols-outlined text-[18px]" data-icon="save">save</span>
+                                บันทึกข้อมูล
+                            </button>
+</div>
+</form>
+</div>
+<!-- Secondary Guidance Column -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Helper Card 1: Attachment -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="attach_file">attach_file</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary">เอกสารแนบ</h4>
+</div>
+<p class="text-body-md text-secondary mb-4">อัปโหลดไฟล์วาระการประชุมหรือรายงานการประชุม (PDF, DOCX เท่านั้น)</p>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center gap-3 hover:border-primary/50 cursor-pointer transition-colors bg-background/50">
+<span class="material-symbols-outlined text-[48px] text-outline" data-icon="upload_file">upload_file</span>
+<div class="text-center">
+<p class="text-label-md font-bold text-primary">คลิกเพื่ออัปโหลด</p>
+<p class="text-label-md text-secondary">หรือลากไฟล์มาวางที่นี่</p>
+</div>
+</div>
+</div>
+<!-- Helper Card 2: System Status -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<h4 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-4">สถานะปัจจุบัน</h4>
+<div class="flex items-center justify-between p-3 bg-background rounded-lg mb-3">
+<span class="text-body-md text-secondary">โควตาจัดเก็บ</span>
+<span class="text-label-md font-bold text-primary">78% เต็ม</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full mb-6">
+<div class="bg-primary h-2 rounded-full" style="width: 78%"></div>
+</div>
+<div class="flex items-start gap-3 p-4 bg-tertiary-fixed rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="info">info</span>
+<p class="text-body-md text-on-tertiary-fixed-variant leading-snug">เอกสารที่บันทึกจะได้รับการจัดหมวดหมู่โดยอัตโนมัติ และจะถูกสำรองข้อมูลทุก 24 ชั่วโมง</p>
+</div>
+</div>
+<!-- Visual Accent Card -->
+<div class="relative h-48 rounded-xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A clean, minimalist high-angle shot of a corporate boardroom table with a single leather-bound notebook and a premium fountain pen. The lighting is soft morning sunlight filtering through architectural glass, casting gentle shadows. The color palette is dominated by professional blues and slate grays, evoking a sense of orderly governance and serious deliberation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHrVUoV90SEQ9JU1kH-QgtTuVBj2BK99jjoxsDGoj1EpFBoU1woaXK2w2bUEVdmKOEX-Xz0h5Hh0odv58-dYq2GmQcrN04VQ_9Zn_vDZxeQniMUN9BKRlGgcJxfexjuAVxZKs7MBzfvdKHaAT_RC5nQ-G9-xrHE_yX38qXWkKGxPIWGoE87zD_EQt-ITtxqtIGTmnGeCcB7fIG8DuE-Q8q_ROZ7y8pTloh49SWafFVO_k2CQ9a4JRdOxijzv7tX0xJO7EBYY4FVRo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+<p class="text-white font-headline-sm">ความปลอดภัยระดับองค์กร</p>
+<p class="text-white/80 text-body-md">ข้อมูลทั้งหมดถูกเข้ารหัสแบบ AES-256</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation (Hidden on Desktop) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant h-16 flex items-center justify-around px-2 z-50">
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="description" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="text-[10px] font-label-md">Docs</span>
+</button>
+<div class="relative -top-4">
+<button class="bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="text-[10px] font-label-md">Depts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-label-md">Profile</span>
+</button>
+</div>
+<script>
+        // Form Interaction
+        document.getElementById('meetingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            // Visual feedback for save
+            btn.disabled = true;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]" data-icon="sync">sync</span> บันทึกข้อมูล...`;
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span> สำเร็จ!`;
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-700');
+                
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('bg-green-700');
+                    btn.classList.add('bg-primary');
+                    alert('บันทึกข้อมูลเรียบร้อยแล้ว');
+                }, 2000);
+            }, 1500);
+        });
+
+        // Micro-interactions for form focus
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+                input.parentElement.classList.add('transition-transform');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>
