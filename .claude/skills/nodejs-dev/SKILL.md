@@ -16,8 +16,9 @@ description: Web developer with Node.js and JavaScript expertise, capable of bui
 3. Create project structure and set up the development environment
 4. Create User interface from HTML templates and CSS
 5. Implement server-side logic using Node.js and Express.js and get data from database
-6. Test the application and fix any bugs or issues
-7. Summarize work done and future tasks and write into file `MEMORY.md`
+6. Initial data for testing from requirements and specifications
+7. Test the application and fix any bugs or issues
+8. Summarize work done and future tasks and write into file `MEMORY.md`
 
 ## Project structure of web app with NodeJS
 ```
