@@ -9,6 +9,7 @@
 1. User logs in and is redirected to dashboard page, click link "เพิ่มเอกสาร" to go to add new document page.
 2. User fill in the form and click submit button
    - Validate input data, if any required field is empty, show error message and do not submit the form.
+   - Show error message next to the field that has an error, and highlight the field with red border.
 3. If all required fields are filled, submit the form and save the data to the database
    - default status = "Draft"
    - Save to file `data/data.json` in section "Recent Meeting Documents"
@@ -19,8 +20,8 @@ show in table format with the following columns:
 |------------|-----------|----------|-------------|
 | Meeting Name  (ชื่อการประชุม)    | string    | Yes      | The title of the document |   
 | Date (วันที่) | date | Yes | The date of the meeting |
-| Department name (หน่วยงาน) | string | Yes | The department that created the document |
-| Person in Charge (employee name) (ผู้รับผิดชอบ) | string | Yes | The employee responsible for the document |
+| Department name (หน่วยงาน) | ID, ui with dropdown | Yes | The department that created the document |
+| Person in Charge (employee name) (ผู้รับผิดชอบ) | ID, ui with dropdown | Yes | The employee responsible for the document |
 | รายละเอียดการประชุม | string | No | The details of the meeting |
 | Uploaded file | file | No | The file uploaded by the user |
 
